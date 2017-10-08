@@ -19,3 +19,10 @@ export class Popup extends Component {
         );
     }
 }
+
+Popup.propTypes = {
+    config: React.PropTypes.object.isRequired,
+    className: React.PropTypes.string.isRequired,
+    href: React.PropTypes.string.isRequired,
+    children: React.PropTypes.node.isRequired
+}
