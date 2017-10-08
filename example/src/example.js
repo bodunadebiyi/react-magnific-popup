@@ -1,38 +1,94 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import { SingleImage } from 'react-magnific-popup';
+import { 
+	SingleImage, 
+	LightBoxGallery, 
+	GalleryItem
+} from 'react-magnific-popup';
 
 class App extends Component {
 	render() {
 		return (
-			<div>
-				<h1>Single Image Lightbox</h1>
-				<SingleImage 
-					className="image-popup-vertical-fit" 
-					href="http://farm9.staticflickr.com/8241/8589392310_7b6127e243_b.jpg" 
-					title="Caption. Can be aligned to any side and contain any HTML."
-					config={SingleImageConfig_1}
-					style={{marginRight: '10px'}}
-				>
-					<img src="http://farm9.staticflickr.com/8241/8589392310_7b6127e243_s.jpg" width="75" height="75" />
-				</SingleImage>
+			<div className="row">
+				<div className="col s12 m6">
+					<h3>Single Image Lightbox</h3>
+					<SingleImage 
+						className="image-popup-vertical-fit" 
+						href="http://farm9.staticflickr.com/8241/8589392310_7b6127e243_b.jpg" 
+						title="Caption. Can be aligned to any side and contain any HTML."
+						config={SingleImageConfig_1}
+						style={{marginRight: '10px'}}
+					>
+						<img src="http://farm9.staticflickr.com/8241/8589392310_7b6127e243_s.jpg" width="75" height="75" />
+					</SingleImage>
 
-				<SingleImage
-					className="image-popup-fit-width" 
-					href="http://farm9.staticflickr.com/8379/8588290361_ecf8c27021_b.jpg" 
-					title="This image fits only horizontally."
-					config={SingleImageConfig_2}
-					style={{marginRight: '10px'}}
-				>
-					<img src="http://farm9.staticflickr.com/8379/8588290361_ecf8c27021_s.jpg" width="75" height="75"/>
-				</SingleImage>
-				<SingleImage 
-					className="image-popup-no-margins" 
-					href="http://farm4.staticflickr.com/3721/9207329484_ba28755ec4_o.jpg"
-					config={SingleImageConfig_3}
-				>
-					<img src="http://farm4.staticflickr.com/3721/9207329484_ba28755ec4_o.jpg" width="107" height="75" />
-				</SingleImage>
+					<SingleImage
+						className="image-popup-fit-width" 
+						href="http://farm9.staticflickr.com/8379/8588290361_ecf8c27021_b.jpg" 
+						title="This image fits only horizontally."
+						config={SingleImageConfig_2}
+						style={{marginRight: '10px'}}
+					>
+						<img src="http://farm9.staticflickr.com/8379/8588290361_ecf8c27021_s.jpg" width="75" height="75"/>
+					</SingleImage>
+					<SingleImage 
+						className="image-popup-no-margins" 
+						href="http://farm4.staticflickr.com/3721/9207329484_ba28755ec4_o.jpg"
+						config={SingleImageConfig_3}
+					>
+						<img src="http://farm4.staticflickr.com/3721/9207329484_ba28755ec4_o.jpg" width="107" height="75" />
+					</SingleImage>
+				</div>
+				<div className="col s12 m6">
+					<h3>Light Box Gallery</h3>
+					<LightBoxGallery 
+						className="popup-gallery"
+						config={galleryConfig}
+					>
+						<GalleryItem
+							href="http://farm9.staticflickr.com/8242/8558295633_f34a55c1c6_b.jpg" 
+							title="The Cleaner"
+						>
+							<img src="http://farm9.staticflickr.com/8242/8558295633_f34a55c1c6_s.jpg" width="75" height="75" />
+						</GalleryItem>
+						<GalleryItem
+							href="http://farm9.staticflickr.com/8382/8558295631_0f56c1284f_b.jpg" 
+							title="The Cleaner"
+						>
+							<img src="http://farm9.staticflickr.com/8382/8558295631_0f56c1284f_s.jpg" width="75" height="75" />
+						</GalleryItem>
+						<GalleryItem
+						 	href="http://farm9.staticflickr.com/8225/8558295635_b1c5ce2794_b.jpg" 
+							title="The Uninvited Guest"
+						>
+							<img src="http://farm9.staticflickr.com/8225/8558295635_b1c5ce2794_s.jpg" width="75" height="75" />
+						</GalleryItem>
+						<GalleryItem
+						 	href="http://farm9.staticflickr.com/8383/8563475581_df05e9906d_b.jpg" 
+							title="Oh no, not again!"
+						>
+							<img src="http://farm9.staticflickr.com/8383/8563475581_df05e9906d_s.jpg" width="75" height="75" />
+						</GalleryItem>
+						<GalleryItem
+						 	href="http://farm9.staticflickr.com/8235/8559402846_8b7f82e05d_b.jpg" 
+							title="Swan Lake"
+						>
+							<img src="http://farm9.staticflickr.com/8235/8559402846_8b7f82e05d_s.jpg" width="75" height="75" />
+						</GalleryItem>
+						<GalleryItem
+						 	href="http://farm9.staticflickr.com/8235/8558295467_e89e95e05a_b.jpg" 
+							title="The Shake"
+						>
+							<img src="http://farm9.staticflickr.com/8235/8558295467_e89e95e05a_s.jpg" width="75" height="75" />
+						</GalleryItem>
+						<GalleryItem
+						 	href="http://farm9.staticflickr.com/8378/8559402848_9fcd90d20b_b.jpg" 
+							title="Who's that, mommy?"
+						>
+							<img src="http://farm9.staticflickr.com/8378/8559402848_9fcd90d20b_s.jpg" width="75" height="75" />
+						</GalleryItem>
+					</LightBoxGallery>
+				</div>
 			</div>
 		)
 	}
@@ -67,6 +123,24 @@ const SingleImageConfig_3 = {
 	zoom: {
 		enabled: true,
 		duration: 300 // don't foget to change the duration also in CSS
+	}
+}
+
+const galleryConfig = {
+	delegate: 'a',
+	type: 'image',
+	tLoading: 'Loading image #%curr%...',
+	mainClass: 'mfp-img-mobile',
+	gallery: {
+		enabled: true,
+		navigateByImgClick: true,
+		preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+	},
+	image: {
+		tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+		titleSrc: function(item) {
+			return item.el.attr('title') + '<small>by Marsel Van Oosten</small>';
+		}
 	}
 }
 
