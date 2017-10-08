@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 import { 
 	SingleImage, 
 	LightBoxGallery, 
-	GalleryItem
+	GalleryItem,
+	Popup
 } from 'react-magnific-popup';
 
 class App extends Component {
@@ -113,6 +114,37 @@ class App extends Component {
 						</GalleryItem>
 					</LightBoxGallery>
 				</div>
+				<div className="col s12 m6">
+					<h3>Popup with Video or Map</h3>
+					<p>
+						<Popup 
+							className="popup-youtube" 
+							href="http://www.youtube.com/watch?v=0O2aH4XLbto" 
+							savefrom_lm_index="0" 
+							savefrom_lm="1"
+							config={popupConfig}>
+								Open YouTube video
+						</Popup>
+					</p>
+					<p>
+						<Popup 
+							className="popup-vimeo" 
+							href="https://vimeo.com/45830194"
+							config={popupConfig}
+							>
+								Open Vimeo video
+						</Popup>
+					</p>
+					<p>
+						<Popup 
+							className="popup-gmaps" 
+							config={popupConfig}
+							href="https://maps.google.com/maps?q=221B+Baker+Street,+London,+United+Kingdom&amp;hl=en&amp;t=v&amp;hnear=221B+Baker+St,+London+NW1+6XE,+United+Kingdom"
+							>
+								Open Google Map
+						</Popup>
+					</p>
+				</div>
 			</div>
 		)
 	}
@@ -190,6 +222,15 @@ const zoomGalleryConfig = {
 			return element.find('img');
 		}
 	}
+}
+
+const popupConfig = {
+	disableOn: 700,
+	type: 'iframe',
+	mainClass: 'mfp-fade',
+	removalDelay: 160,
+	preloader: false,
+	fixedContentPos: false
 }
 
 ReactDOM.render(<App />, document.getElementById('app'));
