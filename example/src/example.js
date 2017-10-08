@@ -10,140 +10,176 @@ import {
 class App extends Component {
 	render() {
 		return (
-			<div className="row">
-				<div className="col s12 m6">
-					<h3>Single Image Lightbox</h3>
-					<SingleImage 
-						className="image-popup-vertical-fit" 
-						href="http://farm9.staticflickr.com/8241/8589392310_7b6127e243_b.jpg" 
-						title="Caption. Can be aligned to any side and contain any HTML."
-						config={SingleImageConfig_1}
-						style={{marginRight: '10px'}}
-					>
-						<img src="http://farm9.staticflickr.com/8241/8589392310_7b6127e243_s.jpg" width="75" height="75" />
-					</SingleImage>
+			<div>
+				<div className="row">
+					<div className="col s12 m6">
+						<h3>Single Image Lightbox</h3>
+						<SingleImage 
+							className="image-popup-vertical-fit" 
+							href="http://farm9.staticflickr.com/8241/8589392310_7b6127e243_b.jpg" 
+							title="Caption. Can be aligned to any side and contain any HTML."
+							config={SingleImageConfig_1}
+							style={{marginRight: '10px'}}
+						>
+							<img src="http://farm9.staticflickr.com/8241/8589392310_7b6127e243_s.jpg" width="75" height="75" />
+						</SingleImage>
 
-					<SingleImage
-						className="image-popup-fit-width" 
-						href="http://farm9.staticflickr.com/8379/8588290361_ecf8c27021_b.jpg" 
-						title="This image fits only horizontally."
-						config={SingleImageConfig_2}
-						style={{marginRight: '10px'}}
-					>
-						<img src="http://farm9.staticflickr.com/8379/8588290361_ecf8c27021_s.jpg" width="75" height="75"/>
-					</SingleImage>
-					<SingleImage 
-						className="image-popup-no-margins" 
-						href="http://farm4.staticflickr.com/3721/9207329484_ba28755ec4_o.jpg"
-						config={SingleImageConfig_3}
-					>
-						<img src="http://farm4.staticflickr.com/3721/9207329484_ba28755ec4_o.jpg" width="107" height="75" />
-					</SingleImage>
-				</div>
-				<div className="col s12 m6">
-					<h3>Light Box Gallery</h3>
-					<LightBoxGallery 
-						className="popup-gallery"
-						config={galleryConfig}
-					>
-						<GalleryItem
-							href="http://farm9.staticflickr.com/8242/8558295633_f34a55c1c6_b.jpg" 
-							title="The Cleaner"
+						<SingleImage
+							className="image-popup-fit-width" 
+							href="http://farm9.staticflickr.com/8379/8588290361_ecf8c27021_b.jpg" 
+							title="This image fits only horizontally."
+							config={SingleImageConfig_2}
+							style={{marginRight: '10px'}}
 						>
-							<img src="http://farm9.staticflickr.com/8242/8558295633_f34a55c1c6_s.jpg" width="75" height="75" />
-						</GalleryItem>
-						<GalleryItem
-							href="http://farm9.staticflickr.com/8382/8558295631_0f56c1284f_b.jpg" 
-							title="The Cleaner"
+							<img src="http://farm9.staticflickr.com/8379/8588290361_ecf8c27021_s.jpg" width="75" height="75"/>
+						</SingleImage>
+						<SingleImage 
+							className="image-popup-no-margins" 
+							href="http://farm4.staticflickr.com/3721/9207329484_ba28755ec4_o.jpg"
+							config={SingleImageConfig_3}
 						>
-							<img src="http://farm9.staticflickr.com/8382/8558295631_0f56c1284f_s.jpg" width="75" height="75" />
-						</GalleryItem>
-						<GalleryItem
-						 	href="http://farm9.staticflickr.com/8225/8558295635_b1c5ce2794_b.jpg" 
-							title="The Uninvited Guest"
+							<img src="http://farm4.staticflickr.com/3721/9207329484_ba28755ec4_o.jpg" width="107" height="75" />
+						</SingleImage>
+					</div>
+					<div className="col s12 m6">
+						<h3>Light Box Gallery</h3>
+						<LightBoxGallery 
+							className="popup-gallery"
+							config={galleryConfig}
 						>
-							<img src="http://farm9.staticflickr.com/8225/8558295635_b1c5ce2794_s.jpg" width="75" height="75" />
-						</GalleryItem>
-						<GalleryItem
-						 	href="http://farm9.staticflickr.com/8383/8563475581_df05e9906d_b.jpg" 
-							title="Oh no, not again!"
-						>
-							<img src="http://farm9.staticflickr.com/8383/8563475581_df05e9906d_s.jpg" width="75" height="75" />
-						</GalleryItem>
-						<GalleryItem
-						 	href="http://farm9.staticflickr.com/8235/8559402846_8b7f82e05d_b.jpg" 
-							title="Swan Lake"
-						>
-							<img src="http://farm9.staticflickr.com/8235/8559402846_8b7f82e05d_s.jpg" width="75" height="75" />
-						</GalleryItem>
-						<GalleryItem
-						 	href="http://farm9.staticflickr.com/8235/8558295467_e89e95e05a_b.jpg" 
-							title="The Shake"
-						>
-							<img src="http://farm9.staticflickr.com/8235/8558295467_e89e95e05a_s.jpg" width="75" height="75" />
-						</GalleryItem>
-						<GalleryItem
-						 	href="http://farm9.staticflickr.com/8378/8559402848_9fcd90d20b_b.jpg" 
-							title="Who's that, mommy?"
-						>
-							<img src="http://farm9.staticflickr.com/8378/8559402848_9fcd90d20b_s.jpg" width="75" height="75" />
-						</GalleryItem>
-					</LightBoxGallery>
-				</div>
-				<div className="col s12 m6">
-					<h3>Zoom Gallery</h3>
-					<LightBoxGallery 
-						className="popup-gallery"
-						config={zoomGalleryConfig}
-					>
-						<GalleryItem
-							href="http://farm4.staticflickr.com/3763/9204547649_0472680945_o.jpg" 
-							data-source="http://500px.com/photo/32736307" 
-							title="Into The Blue" 
-							style={{width: '193px', height:'125px'}}
-						>
-							<img src="http://farm4.staticflickr.com/3763/9204547649_7de96ee188_t.jpg" width="193" height="125" />
-						</GalleryItem>
-						<GalleryItem
-							href="http://farm3.staticflickr.com/2856/9207329420_7f2a668b06_o.jpg" 
-							data-source="http://500px.com/photo/32554131" 
-							title="Light Sabre" 
-							style={{width: '82px', height: '125px'}}
-						>
-							<img src="http://farm3.staticflickr.com/2856/9207329420_e485948b01_t.jpg" width="82px" height="125" />
-						</GalleryItem>
-					</LightBoxGallery>
-				</div>
-				<div className="col s12 m6">
-					<h3>Popup with Video or Map</h3>
-					<p>
-						<Popup 
-							className="popup-youtube" 
-							href="http://www.youtube.com/watch?v=0O2aH4XLbto" 
-							savefrom_lm_index="0" 
-							savefrom_lm="1"
-							config={popupConfig}>
-								Open YouTube video
-						</Popup>
-					</p>
-					<p>
-						<Popup 
-							className="popup-vimeo" 
-							href="https://vimeo.com/45830194"
-							config={popupConfig}
+							<GalleryItem
+								href="http://farm9.staticflickr.com/8242/8558295633_f34a55c1c6_b.jpg" 
+								title="The Cleaner"
 							>
-								Open Vimeo video
-						</Popup>
-					</p>
-					<p>
-						<Popup 
-							className="popup-gmaps" 
-							config={popupConfig}
-							href="https://maps.google.com/maps?q=221B+Baker+Street,+London,+United+Kingdom&amp;hl=en&amp;t=v&amp;hnear=221B+Baker+St,+London+NW1+6XE,+United+Kingdom"
+								<img src="http://farm9.staticflickr.com/8242/8558295633_f34a55c1c6_s.jpg" width="75" height="75" />
+							</GalleryItem>
+							<GalleryItem
+								href="http://farm9.staticflickr.com/8382/8558295631_0f56c1284f_b.jpg" 
+								title="The Cleaner"
 							>
-								Open Google Map
-						</Popup>
-					</p>
+								<img src="http://farm9.staticflickr.com/8382/8558295631_0f56c1284f_s.jpg" width="75" height="75" />
+							</GalleryItem>
+							<GalleryItem
+								href="http://farm9.staticflickr.com/8225/8558295635_b1c5ce2794_b.jpg" 
+								title="The Uninvited Guest"
+							>
+								<img src="http://farm9.staticflickr.com/8225/8558295635_b1c5ce2794_s.jpg" width="75" height="75" />
+							</GalleryItem>
+							<GalleryItem
+								href="http://farm9.staticflickr.com/8383/8563475581_df05e9906d_b.jpg" 
+								title="Oh no, not again!"
+							>
+								<img src="http://farm9.staticflickr.com/8383/8563475581_df05e9906d_s.jpg" width="75" height="75" />
+							</GalleryItem>
+							<GalleryItem
+								href="http://farm9.staticflickr.com/8235/8559402846_8b7f82e05d_b.jpg" 
+								title="Swan Lake"
+							>
+								<img src="http://farm9.staticflickr.com/8235/8559402846_8b7f82e05d_s.jpg" width="75" height="75" />
+							</GalleryItem>
+							<GalleryItem
+								href="http://farm9.staticflickr.com/8235/8558295467_e89e95e05a_b.jpg" 
+								title="The Shake"
+							>
+								<img src="http://farm9.staticflickr.com/8235/8558295467_e89e95e05a_s.jpg" width="75" height="75" />
+							</GalleryItem>
+							<GalleryItem
+								href="http://farm9.staticflickr.com/8378/8559402848_9fcd90d20b_b.jpg" 
+								title="Who's that, mommy?"
+							>
+								<img src="http://farm9.staticflickr.com/8378/8559402848_9fcd90d20b_s.jpg" width="75" height="75" />
+							</GalleryItem>
+						</LightBoxGallery>
+					</div>
+				</div>
+				<div className="row">
+					<div className="col s12 m6">
+						<h3>Zoom Gallery</h3>
+						<LightBoxGallery 
+							className="popup-gallery"
+							config={zoomGalleryConfig}
+						>
+							<GalleryItem
+								href="http://farm4.staticflickr.com/3763/9204547649_0472680945_o.jpg" 
+								data-source="http://500px.com/photo/32736307" 
+								title="Into The Blue" 
+								style={{width: '193px', height:'125px'}}
+							>
+								<img src="http://farm4.staticflickr.com/3763/9204547649_7de96ee188_t.jpg" width="193" height="125" />
+							</GalleryItem>
+							<GalleryItem
+								href="http://farm3.staticflickr.com/2856/9207329420_7f2a668b06_o.jpg" 
+								data-source="http://500px.com/photo/32554131" 
+								title="Light Sabre" 
+								style={{width: '82px', height: '125px'}}
+							>
+								<img src="http://farm3.staticflickr.com/2856/9207329420_e485948b01_t.jpg" width="82px" height="125" />
+							</GalleryItem>
+						</LightBoxGallery>
+					</div>
+					<div className="col s12 m6">
+						<h3>Popup with Video or Map</h3>
+						<p>
+							<Popup 
+								className="popup-youtube" 
+								href="http://www.youtube.com/watch?v=0O2aH4XLbto" 
+								savefrom_lm_index="0" 
+								savefrom_lm="1"
+								config={popupConfig}>
+									Open YouTube video
+							</Popup>
+						</p>
+						<p>
+							<Popup 
+								className="popup-vimeo" 
+								href="https://vimeo.com/45830194"
+								config={popupConfig}
+								>
+									Open Vimeo video
+							</Popup>
+						</p>
+						<p>
+							<Popup 
+								className="popup-gmaps" 
+								config={popupConfig}
+								href="https://maps.google.com/maps?q=221B+Baker+Street,+London,+United+Kingdom&amp;hl=en&amp;t=v&amp;hnear=221B+Baker+St,+London+NW1+6XE,+United+Kingdom"
+								>
+									Open Google Map
+							</Popup>
+						</p>
+					</div>
+				</div>
+				<div className="row">
+					<div className="col s12 m6">
+						<h3>Dialog with CSS transitions</h3>
+						<p>
+							<Popup 
+								className="popup-with-zoom-anim" 
+								href="#small-dialog"
+								config={dialogZoomConfig}
+							>
+								Open with fade-zoom animation
+							</Popup>
+						</p>
+						<p>
+							<Popup 		
+								className="popup-with-move-anim" 
+								href="#small-dialog"
+								config={dialogMoveConfig}
+							>
+								Open with fade-slide animation
+							</Popup>
+						</p>
+						<div 
+							id="small-dialog" 
+							className="zoom-anim-dialog mfp-hide"
+						>
+							<h1>Dialog example</h1>
+
+							<p>This is dummy copy. It is not meant to be read. It has been placed here solely to demonstrate the look and feel of finished, typeset text. Only for show. He who searches for meaning here will be sorely disappointed.</p>
+						</div>
+
+					</div>
 				</div>
 			</div>
 		)
@@ -231,6 +267,30 @@ const popupConfig = {
 	removalDelay: 160,
 	preloader: false,
 	fixedContentPos: false
+}
+
+const dialogZoomConfig = {
+	type: 'inline',
+	fixedContentPos: false,
+	fixedBgPos: true,
+	overflowY: 'auto',
+	closeBtnInside: true,
+	preloader: false,
+	midClick: true,
+	removalDelay: 300,
+	mainClass: 'my-mfp-zoom-in'
+}
+
+const dialogMoveConfig = {
+	type: 'inline',
+	fixedContentPos: false,
+	fixedBgPos: true,
+	overflowY: 'auto',
+	closeBtnInside: true,
+	preloader: false,
+	midClick: true,
+	removalDelay: 300,
+	mainClass: 'my-mfp-slide-bottom'
 }
 
 ReactDOM.render(<App />, document.getElementById('app'));
