@@ -180,6 +180,34 @@ class App extends Component {
 						</div>
 
 					</div>
+					<div className="col s12 m6">
+						<h3>Popup with Form</h3>
+						<Popup 
+							className="popup-with-form" 
+							href="#test-form"
+							config={formConfig}
+						>
+							Open form
+						</Popup>
+						<form id="test-form" 	className="white-popup-block mfp-hide">
+							<h1>Form</h1>
+								<ol>
+									<li>
+										<label htmlFor="name">Name</label>
+										<input id="name" name="name" type="text" placeholder="Name" required="" />
+									</li>
+									<li>
+										<label htmlFor="email">Email</label>
+										<input id="email" name="email" type="email" placeholder="example@domain.com" required="" />
+									</li>
+									<li>
+										<label htmlFor="phone">Phone</label>
+										<input id="phone" name="phone" type="tel" placeholder="Eg. +447500000000" required="" />
+									</li>
+
+								</ol>
+						</form>
+					</div>
 				</div>
 			</div>
 		)
@@ -245,7 +273,7 @@ const zoomGalleryConfig = {
 	image: {
 		verticalFit: true,
 		titleSrc: function(item) {
-			return item.el.attr('title') + ' &middot; <a class="image-source-link" href="'+item.el.attr('data-source')+'" target="_blank">image source</a>';
+			return item.el.attr('title') + ' &middot; <a className="image-source-link" href="'+item.el.attr('data-source')+'" target="_blank">image source</a>';
 		}
 	},
 	gallery: {
@@ -291,6 +319,12 @@ const dialogMoveConfig = {
 	midClick: true,
 	removalDelay: 300,
 	mainClass: 'my-mfp-slide-bottom'
+}
+
+const formConfig = {
+	type: 'inline',
+	preloader: false,
+	focus: '#name'
 }
 
 ReactDOM.render(<App />, document.getElementById('app'));
