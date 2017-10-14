@@ -1,11 +1,9 @@
-# ReactMagnificPopup
-
-__COMPONENT DESCRIPTION GOES HERE__
-
+# React Magnific Popup
+A simple react wrapper for the popular jquery plugin `magnific popup`
 
 ## Demo & Examples
-
-Live demo: [bodunadebiyi.github.io/react-magnific-popup](http://bodunadebiyi.github.io/react-magnific-popup/)
+Live demo and code examples can be found in the link below.
+[bodunadebiyi.github.io/react-magnific-popup](http://bodunadebiyi.github.io/react-magnific-popup/)
 
 To build the examples locally, run:
 
@@ -27,35 +25,14 @@ You can also use the standalone build by including `dist/react-magnific-popup.js
 npm install react-magnific-popup --save
 ```
 
-
-## Usage
-
-__EXPLAIN USAGE HERE__
-
-```
-var ReactMagnificPopup = require('react-magnific-popup');
-
-<ReactMagnificPopup>Example</ReactMagnificPopup>
-```
-
 ### Properties
-
-* __DOCUMENT PROPERTIES HERE__
-
-### Notes
-
-__ADDITIONAL USAGE NOTES__
-
+Look at the code examples to see the props each component has, you can also deduce other available props by looking at the original [magnific popup documentation](http://dimsemenov.com/plugins/magnific-popup/documentation.html).
 
 ## Development (`src`, `lib` and the build process)
 
 **NOTE:** The source code for the component is in `src`. A transpiled CommonJS version (generated with Babel) is available in `lib` for use with node.js, browserify and webpack. A UMD bundle is also built to `dist`, which can be included without the need for any build system.
 
 To build, watch and serve the examples (which will also watch the component source), run `npm start`. If you just want to watch changes to `src` and rebuild `lib`, run `npm run watch` (this is useful if you are working with `npm link`).
-
-## License
-
-__PUT LICENSE HERE__
 
 Copyright (c) 2017 Adebiyi Bodunde.
 
