@@ -1,6 +1,9 @@
 # React Magnific Popup
 A simple react wrapper for the popular jquery plugin `magnific popup`
 
+## Usage
+You need include jquery.js and the magnific-popup.js plugin in the header of your index.html file of your react application.
+
 ## Demo & Examples
 Live demo and code examples can be found in the link below.
 [bodunadebiyi.github.io/react-magnific-popup](http://bodunadebiyi.github.io/react-magnific-popup/)
@@ -27,6 +30,39 @@ npm install react-magnific-popup --save
 
 ### Properties
 Look at the code examples to see the props each component has, you can also deduce other available props by looking at the original [magnific popup documentation](http://dimsemenov.com/plugins/magnific-popup/documentation.html).
+
+### Public methods
+To have access to the public methods import the MagnificPop package and use as follows:
+```js
+import { MagnificPopup } from 'react-magnific-popup'
+
+const SampleComponent = () => {
+    MaginificPopup.trigger('.element-with-popup', 'open');
+    MaginificPopup.trigger('.element-with-popup', 'close');
+    MaginificPopup.trigger('.element-with-popup', 'goto', 3);
+}
+```
+Check official [magnific popup documentation](http://dimsemenov.com/plugins/magnific-popup/documentation.html) for more available public methods.
+
+### Public properties
+To have access to the public properties import the MagnificPop package and use as follows:
+
+```js
+import { MagnificPopup } from 'react-magnific-popup'
+
+const SampleComponent = () => {
+    MaginificPopup.props.item;
+    MaginificPopup.props.currItem;
+    MaginificPopup.props.index;
+    MaginificPopup.props.content;
+    MaginificPopup.props.bgOverlay;
+    MaginificPopup.props.wrap;
+    MaginificPopup.props.contentContainer;
+    MaginificPopup.props.st;
+    MaginificPopup.props.isIE7;
+    MaginificPopup.props.isIOS;
+}
+```
 
 ## Development (`src`, `lib` and the build process)
 
