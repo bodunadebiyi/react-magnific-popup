@@ -1,19 +1,44 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import ReactGist from 'react-gist';
 import { 
 	SingleImage, 
 	LightBoxGallery, 
 	GalleryItem,
-	Popup
+	Popup,
+	MagnificPopup
 } from 'react-magnific-popup';
 
 class App extends Component {
+	constructor(props, context) {
+		super(props, context)
+		this.state = {
+			singleSample: 'hide',
+			lightBoxSample: 'hide',
+			zoomGallery: 'hide',
+			popupVideo: 'hide',
+			popupZoom: 'hide',
+			popupForm: 'hide',
+			popupAjax: 'hide'
+		}
+	}
+
+	onToggle(type, e) {
+		e.preventDefault();
+		let newState = {};
+
+		newState[type] = this.state[type] === 'hide' ? 'show' : 'hide';
+		this.setState(newState);
+	}
+
 	render() {
 		return (
 			<div>
 				<div className="row">
 					<div className="col s12 m6">
-						<h3>Single Image Lightbox</h3>
+						<h3>Single Image Lightbox <small>
+							<a href="#" onClick={this.onToggle.bind(this, 'singleSample')}>view source</a>
+							</small></h3>
 						<SingleImage 
 							className="image-popup-vertical-fit" 
 							href="http://farm9.staticflickr.com/8241/8589392310_7b6127e243_b.jpg" 
@@ -40,9 +65,14 @@ class App extends Component {
 						>
 							<img src="http://farm4.staticflickr.com/3721/9207329484_ba28755ec4_o.jpg" width="107" height="75" />
 						</SingleImage>
+						<div id="single-gist" style={this.state.singleSample === 'hide' ? {height: '0px', overflow: 'hidden'} : {height: '300px', overflow: 'scroll'}}>
+							<ReactGist id="226e4a27fddba82c464d8ab34bd6a259" />
+						</div>
 					</div>
 					<div className="col s12 m6">
-						<h3>Light Box Gallery</h3>
+						<h3>Light Box Gallery <small>
+							<a href="#" onClick={this.onToggle.bind(this, 'lightBoxSample')}>view source</a>
+							</small></h3>
 						<LightBoxGallery 
 							className="popup-gallery"
 							config={galleryConfig}
@@ -90,11 +120,16 @@ class App extends Component {
 								<img src="http://farm9.staticflickr.com/8378/8559402848_9fcd90d20b_s.jpg" width="75" height="75" />
 							</GalleryItem>
 						</LightBoxGallery>
+						<div id="single-gist" style={this.state.lightBoxSample === 'hide' ? {height: '0px', overflow: 'hidden'} : {height: '300px', overflow: 'scroll'}}>
+							<ReactGist id="0d68ec113e65bcfd35ebd9f05c671c26" />
+						</div>
 					</div>
 				</div>
 				<div className="row">
 					<div className="col s12 m6">
-						<h3>Zoom Gallery</h3>
+						<h3>Zoom Gallery <small>
+							<a href="#" onClick={this.onToggle.bind(this, 'zoomGallery')}>view source</a>
+							</small></h3>
 						<LightBoxGallery 
 							className="popup-gallery"
 							config={zoomGalleryConfig}
@@ -116,9 +151,14 @@ class App extends Component {
 								<img src="http://farm3.staticflickr.com/2856/9207329420_e485948b01_t.jpg" width="82px" height="125" />
 							</GalleryItem>
 						</LightBoxGallery>
+						<div id="single-gist" style={this.state.zoomGallery === 'hide' ? {height: '0px', overflow: 'hidden'} : {height: '300px', overflow: 'scroll'}}>
+							<ReactGist id="d23cd4528613e9d026d3a35969f15e30" />
+						</div>
 					</div>
 					<div className="col s12 m6">
-						<h3>Popup with Video or Map</h3>
+						<h3>Popup with Video or Map <small>
+							<a href="#" onClick={this.onToggle.bind(this, 'popupVideo')}>view source</a>
+							</small></h3>
 						<p>
 							<Popup 
 								className="popup-youtube" 
@@ -147,11 +187,16 @@ class App extends Component {
 									Open Google Map
 							</Popup>
 						</p>
+						<div id="single-gist" style={this.state.popupVideo === 'hide' ? {height: '0px', overflow: 'hidden'} : {height: '300px', overflow: 'scroll'}}>
+							<ReactGist id="0bb8fe8d96cf145b831f0f93989e41f1" />
+						</div>
 					</div>
 				</div>
 				<div className="row">
 					<div className="col s12 m6">
-						<h3>Dialog with CSS transitions</h3>
+						<h3>Dialog with CSS transitions <small>
+							<a href="#" onClick={this.onToggle.bind(this, 'popupZoom')}>view source</a>
+							</small></h3>
 						<p>
 							<Popup 
 								className="popup-with-zoom-anim" 
@@ -178,10 +223,14 @@ class App extends Component {
 
 							<p>This is dummy copy. It is not meant to be read. It has been placed here solely to demonstrate the look and feel of finished, typeset text. Only for show. He who searches for meaning here will be sorely disappointed.</p>
 						</div>
-
+						<div id="single-gist" style={this.state.popupZoom === 'hide' ? {height: '0px', overflow: 'hidden'} : {height: '300px', overflow: 'scroll'}}>
+							<ReactGist id="12caf5894f8773dff7d993184daac980" />
+						</div>
 					</div>
 					<div className="col s12 m6">
-						<h3>Popup with Form</h3>
+						<h3>Popup with Form <small>
+							<a href="#" onClick={this.onToggle.bind(this, 'popupForm')}>view source</a>
+							</small></h3>
 						<Popup 
 							className="popup-with-form" 
 							href="#test-form"
@@ -204,10 +253,57 @@ class App extends Component {
 										<label htmlFor="phone">Phone</label>
 										<input id="phone" name="phone" type="tel" placeholder="Eg. +447500000000" required="" />
 									</li>
-
 								</ol>
 						</form>
+						<div id="single-gist" style={this.state.popupForm === 'hide' ? {height: '0px', overflow: 'hidden'} : {height: '300px', overflow: 'scroll'}}>
+							<ReactGist id="e390f598b516c09908db98488f03d40a" />
+						</div>
 					</div>
+				</div>
+				<div className="row">
+					<div className="col s12 m6">
+						<h3>Ajax Popup <small>
+							<a href="#" onClick={this.onToggle.bind(this, 'popupAjax')}>view source</a>
+							</small></h3>
+						<p>
+							<Popup 
+								className="simple-ajax-popup-align-top"
+								href="http://dimsemenov.com/plugins/magnific-popup/site-assets/ajax/test-ajax.html"
+								config={ajaxConfig_1}
+							>
+								Load content via ajax
+							</Popup>
+						</p>
+						<p>
+							<Popup 
+								className="simple-ajax-popup" 
+								href="http://dimsemenov.com/plugins/magnific-popup/site-assets/ajax/test-ajax-2.html"
+								config={{type: 'ajax'}}
+							>
+								Load another content via ajax
+							</Popup>
+						</p>
+						<div id="single-gist" style={this.state.popupAjax === 'hide' ? {height: '0px', overflow: 'hidden'} : {height: '300px', overflow: 'scroll'}}>
+							<ReactGist id="5f8b53d458d3baa89b4c9d030db37f01" />
+						</div>
+					</div>
+					{/* <div className="col s12 m6">
+						<h3>Modal Popup</h3>
+						<Popup 
+							className="popup-modal" 
+							href="#test-modal"
+							config={modalConfig}
+						>
+							Open modal
+						</Popup>
+						<div 
+							id="test-modal" 
+							className="white-popup-block mfp-hide">
+								<h1>Modal dialog</h1>
+								<p>You won't be able to dismiss this by usual means (escape or click button), but you can close it programatically based on user choices or actions.</p>
+							<span onClick={this.onClose}>Dismiss</span>
+						</div>
+					</div> */}
 				</div>
 			</div>
 		)
@@ -325,6 +421,19 @@ const formConfig = {
 	type: 'inline',
 	preloader: false,
 	focus: '#name'
+}
+
+const ajaxConfig_1 = {
+	type: 'ajax',
+	alignTop: true,
+	overflowY: 'scroll'
+};
+
+const modalConfig = {
+	type: 'inline',
+	preloader: false,
+	focus: '#username',
+	modal: true
 }
 
 ReactDOM.render(<App />, document.getElementById('app'));
