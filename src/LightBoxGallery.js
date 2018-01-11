@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { extractProps } from './utils';
 
 export class LightBoxGallery extends Component {
@@ -33,12 +34,12 @@ export class GalleryItem extends Component {
 }
 
 LightBoxGallery.propTypes = {
-    className: React.PropTypes.string.isRequired,
-    config: React.PropTypes.object.isRequired
+    className: PropTypes.string.isRequired,
+    config: PropTypes.object.isRequired
 }
 
 GalleryItem.propTypes = {
-    href: React.PropTypes.string.isRequired,
-    title: React.PropTypes.string,
-    children: React.PropTypes.element.isRequired
+    href: PropTypes.string.isRequired,
+    title: PropTypes.string,
+    children: PropTypes.element.isRequired
 }
