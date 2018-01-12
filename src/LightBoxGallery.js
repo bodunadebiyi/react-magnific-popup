@@ -5,12 +5,13 @@ import { extractProps } from './utils';
 export class LightBoxGallery extends Component {
     constructor(props, context) {
         super(props, context);
-        this._jquery = window.jQuery || window.$;
     }
 
+    _jquery() { return window.jQuery || window.$ }
+
     componentDidMount() {
-        this._jquery(document).ready(() => {
-			this._jquery(`.${this.props.className}`).magnificPopup(this.props.config);
+        this._jquery()(document).ready(() => {
+			this._jquery()(`.${this.props.className}`).magnificPopup(this.props.config);
 		});
     }
 
