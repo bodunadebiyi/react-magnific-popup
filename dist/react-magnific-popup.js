@@ -959,9 +959,7 @@ module.exports = ReactPropTypesSecret;
 Object.defineProperty(exports, '__esModule', {
     value: true
 });
-var _jquery = function _jquery() {
-    return window.jQuery || window.$;
-};
+var _jquery = window.jQuery || window.$;
 
 var MagnificPopup = {
     trigger: function trigger(elementClassName) {
@@ -974,10 +972,10 @@ var MagnificPopup = {
         }
 
         console.log.apply(console, [cname].concat(action));
-        (_jquery2 = _jquery()(cname)).magnificPopup.apply(_jquery2, action);
+        (_jquery2 = _jquery(cname)).magnificPopup.apply(_jquery2, action);
     },
     props: function props() {
-        var magnificPopup = _jquery().magnificPopup.instance;
+        var magnificPopup = _jquery.magnificPopup.instance;
 
         return {
             item: magnificPopup.item,
@@ -1030,20 +1028,16 @@ var LightBoxGallery = (function (_Component) {
         _classCallCheck(this, LightBoxGallery);
 
         _get(Object.getPrototypeOf(LightBoxGallery.prototype), 'constructor', this).call(this, props, context);
+        this._jquery = window.jQuery || window.$;
     }
 
     _createClass(LightBoxGallery, [{
-        key: '_jquery',
-        value: function _jquery() {
-            return window.jQuery || window.$;
-        }
-    }, {
         key: 'componentDidMount',
         value: function componentDidMount() {
             var _this = this;
 
-            this._jquery()(document).ready(function () {
-                _this._jquery()('.' + _this.props.className).magnificPopup(_this.props.config);
+            this._jquery(document).ready(function () {
+                _this._jquery('.' + _this.props.className).magnificPopup(_this.props.config);
             });
         }
     }, {
@@ -1134,20 +1128,16 @@ var Popup = (function (_Component) {
         _classCallCheck(this, Popup);
 
         _get(Object.getPrototypeOf(Popup.prototype), 'constructor', this).call(this, props, context);
+        this._jquery = window.jQuery || window.$;
     }
 
     _createClass(Popup, [{
-        key: '_jquery',
-        value: function _jquery() {
-            return window.jQuery || window.$;
-        }
-    }, {
         key: 'componentDidMount',
         value: function componentDidMount() {
             var _this = this;
 
-            this._jquery()(document).ready(function () {
-                _this._jquery()('.' + _this.props.className).magnificPopup(_this.props.config);
+            this._jquery(document).ready(function () {
+                _this._jquery('.' + _this.props.className).magnificPopup(_this.props.config);
             });
         }
     }, {
@@ -1258,20 +1248,16 @@ var SingleImage = (function (_Component) {
 		_classCallCheck(this, SingleImage);
 
 		_get(Object.getPrototypeOf(SingleImage.prototype), 'constructor', this).call(this, props, context);
+		this._jquery = window.jQuery || window.$;
 	}
 
 	_createClass(SingleImage, [{
-		key: '_jquery',
-		value: function _jquery() {
-			return window.jQuery || window.$;
-		}
-	}, {
 		key: 'componentDidMount',
 		value: function componentDidMount() {
 			var _this = this;
 
-			this._jquery()(document).ready(function () {
-				_this._jquery()('.' + _this.props.className).magnificPopup(_this.props.config);
+			this._jquery(document).ready(function () {
+				_this._jquery('.' + _this.props.className).magnificPopup(_this.props.config);
 			});
 		}
 	}, {

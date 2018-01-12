@@ -1,13 +1,13 @@
-const _jquery = function() { return window.jQuery || window.$ }
+const _jquery = window.jQuery || window.$;
 
 export const MagnificPopup = {
     trigger: function (elementClassName, ...action) {
         let cname = elementClassName.startsWith('.') ? elementClassName : `.${elementClassName}`;
         console.log(cname, ...action)
-        _jquery()(cname).magnificPopup(...action);
+        _jquery(cname).magnificPopup(...action);
     },
     props: function() {
-        const magnificPopup = _jquery().magnificPopup.instance;
+        const magnificPopup = _jquery.magnificPopup.instance;
 
         return {
             item: magnificPopup.item,
