@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { extractProps } from './utils';
 
 export class Popup extends Component {
@@ -21,8 +22,8 @@ export class Popup extends Component {
 }
 
 Popup.propTypes = {
-    config: React.PropTypes.object.isRequired,
-    className: React.PropTypes.string.isRequired,
-    href: React.PropTypes.string.isRequired,
-    children: React.PropTypes.node.isRequired
+    config: PropTypes.object.isRequired,
+    className: PropTypes.string.isRequired,
+    href: PropTypes.string.isRequired,
+    children: PropTypes.node.isRequired
 }

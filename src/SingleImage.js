@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { extractProps } from './utils';
 
 export class SingleImage extends Component {
@@ -24,9 +25,9 @@ export class SingleImage extends Component {
 
 
 SingleImage.propTypes = {
-    config: React.PropTypes.object.isRequired,
-    className: React.PropTypes.string.isRequired,
-    href: React.PropTypes.string.isRequired,
-	children: React.PropTypes.element.isRequired,
-	title: React.PropTypes.string
+  config: PropTypes.object.isRequired,
+  className: PropTypes.string.isRequired,
+  href: PropTypes.string.isRequired,
+	children: PropTypes.element.isRequired,
+	title: PropTypes.string
 }
